@@ -20,17 +20,25 @@ namespace WindowsFormsAtividade1
 
         private void button1_Click(object sender, EventArgs e)
         {
-         var resp = $"CPF: {cad1.getcpf()}\n" +
-                    $"Email: {cad1.getemail()}\n" +
-                    $"Senha: {cad1.getsenha()}\n" +
-                    $"Nome: {cad1.getnome()}\n" +
-                    $"Sobrenome: {cad1.getsobrenome()}\n" +
-                    $"País: {cad1.getpais()}\n" +
-                    $"Mês: {cad1.getmes()}\n" +
-                    $"Ano: {cad1.getano()}\n" +
-                    $"Sexo: {cad1.getsexo()}\n";
+            if (textBox1.Text == Form1.resg_gmail && textBox2.Text == Form1.resg_senha)
+            {
+                var resp = $"CPF: {Form1.resg_cpf}\n" +
+                           $"Email: {Form1.resg_gmail}\n" +
+                           $"Senha: {Form1.resg_senha}\n" +
+                           $"Nome: {Form1.resg_nome}\n" +
+                           $"Sobrenome: {Form1.resg_sobrenome}\n" +
+                           $"País: {Form1.resg_pais}\n" +
+                           $"Mês: {Form1.resg_mes}\n" +
+                           $"Ano: {Form1.resg_ano}\n" +
+                           $"Sexo: {Form1.resg_sexo}\n";
 
-            MessageBox.Show(resp, "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(resp, "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("E-mail ou senha invalidos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+          
         }
 
         private void button2_Click(object sender, EventArgs e)

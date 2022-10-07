@@ -13,9 +13,18 @@ namespace WindowsFormsAtividade1
     public partial class Form1 : Form
     {
         Cadastro cad1 = new Cadastro();
-        string consentimento1;
-        string consentimento2;
         Form2 login = new Form2();
+        
+        public static string resg_cpf;
+        public static string resg_nome;
+        public static string resg_sobrenome;
+        public static string resg_senha;
+        public static string resg_gmail;
+        public static string resg_mes;
+        public static string resg_ano;
+        public static string resg_pais;
+        public static string resg_sexo;
+
         public Form1()
         {
             InitializeComponent();
@@ -93,16 +102,27 @@ namespace WindowsFormsAtividade1
                         }
                         {
 
+                        
+                                cad1.setcpf(textBox1.Text);
+                                cad1.setemail(textBox2.Text);
+                                cad1.setsenha(textBox3.Text);
+                                cad1.setnome(textBox7.Text);
+                                cad1.setsobrenome(textBox6.Text);
+                                cad1.setpais(comboBox3.Text);
+                                cad1.setmes(comboBox5.Text);
+                                cad1.setano(int.Parse(comboBox4.Text));
+                                cad1.setsexo(comboBox6.Text);
 
-                            cad1.setcpf(textBox1.Text);
-                            cad1.setemail(textBox2.Text);
-                            cad1.setsenha(textBox3.Text);
-                            cad1.setnome(textBox7.Text);
-                            cad1.setsobrenome(textBox6.Text);
-                            cad1.setpais(comboBox3.Text);
-                            cad1.setmes(comboBox5.Text);
-                            cad1.setano(int.Parse(comboBox4.Text));
-                            cad1.setsexo(comboBox6.Text);
+                            resg_cpf = textBox1.Text;
+                            resg_nome = textBox7.Text;
+                            resg_sobrenome = textBox6.Text;
+                            resg_senha = textBox3.Text;
+                            resg_gmail = textBox2.Text;
+                            resg_mes = comboBox5.Text;
+                            resg_ano = comboBox4.Text;
+                            resg_pais = comboBox3.Text;
+                            resg_sexo = comboBox6.Text;
+
 
                             this.Hide();
                             login.ShowDialog();
@@ -114,6 +134,10 @@ namespace WindowsFormsAtividade1
 
 
         }
-        
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
